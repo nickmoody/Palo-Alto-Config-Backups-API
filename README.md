@@ -10,6 +10,7 @@ Requirements:
 <br>
 All of the above are configuration options in the script
 <br>
-Generate an API key from a <a href="https://www.paloaltonetworks.com/documentation/70/pan-os/pan-os/device-management/use-the-xml-api.html" target="_blank">Palo Alto firewall</a> using the string below:
+<br>
+Generate an API key from a <a href="https://www.paloaltonetworks.com/documentation/70/pan-os/pan-os/device-management/use-the-xml-api.html" target="_blank">Palo Alto firewall</a> using the string below:<br>
 <pre>http(s)://hostname/api/?type=keygen&amp;user=username&amp;password=password
 </pre>

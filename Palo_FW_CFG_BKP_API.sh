@@ -49,12 +49,14 @@ countsuccess=0
 # Create counter for failed API calls:
 countapifail=0
 # run curl for each device in the list:
+# Create a folder to store the configuration files into
+mkdir $folder/$date
 for device in `cat $devicelist`; do
-curl -s -k "https://$device/api/?type=config&action=show&key=$Key" --output $folder/$device-$date.xml &
+curl -s -k "https://$device/api/?type=config&action=show&key=$Key" --output $folder/$date/$device-$date.xml &
 show_dots $!
 counttotal=$((counttotal+1))
 # Check if the API call was successfull
-File="$folder/$device-$date.xml"
+File="$folder/$date/$device-$date.xml"
 if [ ! -f $File ]; then
 printf "$device not responding - check hostname/IP and connectivity\n"  | tee -a "$logfile"
 countconfail=$((countconfail+1))
